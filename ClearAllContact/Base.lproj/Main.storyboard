@@ -35,12 +35,34 @@
                                     <action selector="importAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="H4w-UW-7m6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKk-bg-uEy">
+                                <rect key="frame" x="285" y="209" width="30" height="30"/>
+                                <state key="normal" title="备份">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backupAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Bt9-pW-8dt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXM-aM-Zyc">
+                                <rect key="frame" x="285" y="247" width="30" height="30"/>
+                                <state key="normal" title="恢复">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recoverAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Y3G-Je-aDn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aKk-bg-uEy" firstAttribute="centerX" secondItem="yS1-Ls-lqN" secondAttribute="centerX" id="5G0-56-JPH"/>
+                            <constraint firstItem="aKk-bg-uEy" firstAttribute="top" secondItem="yS1-Ls-lqN" secondAttribute="bottom" constant="8" id="Gfk-hA-iiD"/>
                             <constraint firstItem="yS1-Ls-lqN" firstAttribute="top" secondItem="bTM-N7-a0I" secondAttribute="bottom" constant="8" id="QBx-05-nsi"/>
                             <constraint firstAttribute="centerX" secondItem="bTM-N7-a0I" secondAttribute="centerX" id="Yhc-tD-zAx"/>
                             <constraint firstAttribute="centerY" secondItem="bTM-N7-a0I" secondAttribute="centerY" constant="152" id="cRY-wc-dQq"/>
+                            <constraint firstItem="AXM-aM-Zyc" firstAttribute="centerX" secondItem="aKk-bg-uEy" secondAttribute="centerX" id="dAA-co-0bd"/>
+                            <constraint firstItem="AXM-aM-Zyc" firstAttribute="top" secondItem="aKk-bg-uEy" secondAttribute="bottom" constant="8" id="gkY-6S-pBf"/>
                             <constraint firstItem="yS1-Ls-lqN" firstAttribute="centerX" secondItem="bTM-N7-a0I" secondAttribute="centerX" id="m5U-z2-ulU"/>
                         </constraints>
                     </view>
