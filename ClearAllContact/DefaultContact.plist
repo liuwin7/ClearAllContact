@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>ContactName</key>
+		<string>马钶嘉</string>
+		<key>ContactPhone</key>
+		<string>13521322121</string>
+	</dict>
+	<dict>
+		<key>ContactName</key>
+		<string>郝文威</string>
+		<key>ContactPhone</key>
+		<string>18510511964</string>
+	</dict>
+	<dict>
+		<key>ContactName</key>
+		<string>李泽伦</string>
+		<key>ContactPhone</key>
+		<string>13051133557</string>
+	</dict>
+	<dict>
+		<key>ContactName</key>
+		<string>张璇</string>
+		<key>ContactPhone</key>
+		<string>18393839211</string>
+	</dict>
+	<dict>
+		<key>ContactName</key>
+		<string>桃姐</string>
+		<key>ContactPhone</key>
+		<string>13529311921</string>
+	</dict>
+	<dict>
+		<key>ContactName</key>
+		<string>杨明轩</string>
+		<key>ContactPhone</key>
+		<string>15839328283</string>
+	</dict>
+	<dict>
+		<key>ContactName</key>
+		<string>丽姐</string>
+		<key>ContactPhone</key>
+		<string>13321123987</string>
+	</dict>
+	<dict>
+		<key>ContactName</key>
+		<string>刘大树</string>
+		<key>ContactPhone</key>
+		<string>13590912212</string>
+	</dict>
+	<dict>
+		<key>ContactName</key>
+		<string>成龙</string>
+		<key>ContactPhone</key>
+		<string>18743322213</string>
+	</dict>
+	<dict>
+		<key>ContactName</key>
+		<string>李连杰</string>
+		<key>ContactPhone</key>
+		<string>13898743212</string>
+	</dict>
+</array>
+</plist>
