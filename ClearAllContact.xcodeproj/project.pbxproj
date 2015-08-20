@@ -17,6 +17,7 @@
 		509372A61B84517100050CF7 /* ClearAllContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 509372A51B84517100050CF7 /* ClearAllContactTests.m */; };
 		509372B11B8452EC00050CF7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509372B01B8452EC00050CF7 /* AddressBook.framework */; };
 		509372B31B845A4C00050CF7 /* DefaultContact.plist in Resources */ = {isa = PBXBuildFile; fileRef = 509372B21B845A4C00050CF7 /* DefaultContact.plist */; };
+		509B2A4F1B85C6C50092830B /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509B2A4E1B85C6C50092830B /* MainTabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,10 @@
 		509372A51B84517100050CF7 /* ClearAllContactTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClearAllContactTests.m; sourceTree = "<group>"; };
 		509372B01B8452EC00050CF7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		509372B21B845A4C00050CF7 /* DefaultContact.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultContact.plist; sourceTree = "<group>"; };
+		509B2A481B857B080092830B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		509B2A4C1B8582190092830B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		509B2A4D1B85C6C50092830B /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
+		509B2A4E1B85C6C50092830B /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
 		85BD53AB6659F1F1C0ED61AC /* Pods-ClearAllContact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearAllContact.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClearAllContact/Pods-ClearAllContact.debug.xcconfig"; sourceTree = "<group>"; };
 		91DD8368C473C685FF5215F3 /* libPods-ClearAllContact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ClearAllContact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +109,8 @@
 			children = (
 				509372901B84517000050CF7 /* MainViewController.h */,
 				509372911B84517000050CF7 /* MainViewController.m */,
+				509B2A4D1B85C6C50092830B /* MainTabBarViewController.h */,
+				509B2A4E1B85C6C50092830B /* MainTabBarViewController.m */,
 				509372931B84517000050CF7 /* Main.storyboard */,
 				509372891B84517000050CF7 /* Supporting Files */,
 				509372B21B845A4C00050CF7 /* DefaultContact.plist */,
@@ -215,6 +222,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 5093727D1B84517000050CF7;
 			productRefGroup = 509372871B84517000050CF7 /* Products */;
@@ -287,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				509372921B84517000050CF7 /* MainViewController.m in Sources */,
+				509B2A4F1B85C6C50092830B /* MainTabBarViewController.m in Sources */,
 				5093728F1B84517000050CF7 /* AppDelegate.m in Sources */,
 				5093728C1B84517000050CF7 /* main.m in Sources */,
 			);
@@ -315,6 +324,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				509372941B84517000050CF7 /* Base */,
+				509B2A4C1B8582190092830B /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -323,6 +333,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				509372991B84517000050CF7 /* Base */,
+				509B2A481B857B080092830B /* zh-Hans */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

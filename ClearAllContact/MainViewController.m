@@ -27,6 +27,13 @@ NSString *CONTACT_PHONE_LABEL = @"ConctactPhoneLabel";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.0 green:0.502 blue:1.0 alpha:1.0]];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                                                      NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                                      NSFontAttributeName: [UIFont systemFontOfSize:20.0f],
+                                                                      }];
     CFErrorRef error = nil;
     addressBook = ABAddressBookCreateWithOptions(NULL, &error);
     if (addressBook && !error) {
@@ -40,6 +47,10 @@ NSString *CONTACT_PHONE_LABEL = @"ConctactPhoneLabel";
     } else {
         NSLog(@"error %@", [(__bridge NSError *)error localizedDescription]);
     }
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
 }
 
 #pragma mark - Target Action
@@ -236,7 +247,7 @@ NSString *CONTACT_PHONE_LABEL = @"ConctactPhoneLabel";
         NSString *firstName = firstNameRef != NULL ? (__bridge NSString *)firstNameRef : @"";
         NSString *lastName = lastNameRef != NULL ? (__bridge NSString *)lastNameRef : @"";
         NSString *contactName = [NSString stringWithFormat:@"%@%@", lastName, firstName]; // 姓名
-        
+
         NSDictionary *dic = @{
                               @"name": contactName,
                               @"phone": allPhone,

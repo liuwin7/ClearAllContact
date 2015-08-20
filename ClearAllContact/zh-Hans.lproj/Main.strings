@@ -1,0 +1,25 @@
+
+/* Class = "UIButton"; normalTitle = "Recover"; ObjectID = "AXM-aM-Zyc"; */
+"AXM-aM-Zyc.normalTitle" = "恢复";
+
+/* Class = "UITabBarItem"; title = "Steward"; ObjectID = "HWR-4O-Pex"; */
+"HWR-4O-Pex.title" = "管家";
+
+/* Class = "UIBarButtonItem"; title = "Login"; ObjectID = "PTC-Xa-6fN"; */
+"PTC-Xa-6fN.title" = "登录";
+
+/* Class = "UIButton"; normalTitle = "Backup"; ObjectID = "aKk-bg-uEy"; */
+"aKk-bg-uEy.normalTitle" = "备份";
+
+/* Class = "UIButton"; normalTitle = "Clear"; ObjectID = "bTM-N7-a0I"; */
+"bTM-N7-a0I.normalTitle" = "清空";
+
+/* Class = "UINavigationItem"; title = "Contact Steward"; ObjectID = "kW5-26-Xzz"; */
+"kW5-26-Xzz.title" = "联系人管家";
+
+/* Class = "UITabBarItem"; title = "Contact"; ObjectID = "sXx-rz-g59"; */
+"sXx-rz-g59.title" = "联系人";
+
+/* Class = "UIButton"; normalTitle = "Import"; ObjectID = "yS1-Ls-lqN"; */
+"yS1-Ls-lqN.normalTitle" = "导入";
+
