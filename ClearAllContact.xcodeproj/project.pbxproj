@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2156A763D7A7772684B552BC /* libPods-ClearAllContact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DD8368C473C685FF5215F3 /* libPods-ClearAllContact.a */; };
+		508A176B1B85F4B500C0F9F6 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508A176A1B85F4B500C0F9F6 /* ContactViewController.m */; };
+		508A176E1B85F61B00C0F9F6 /* FastAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 508A176D1B85F61B00C0F9F6 /* FastAddressBook.m */; };
+		508A17711B85F8A200C0F9F6 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 508A17701B85F8A200C0F9F6 /* ContactModel.m */; };
+		508A17741B85F95000C0F9F6 /* PhoneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 508A17731B85F95000C0F9F6 /* PhoneModel.m */; };
 		5093728C1B84517000050CF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093728B1B84517000050CF7 /* main.m */; };
 		5093728F1B84517000050CF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093728E1B84517000050CF7 /* AppDelegate.m */; };
 		509372921B84517000050CF7 /* ContactManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509372911B84517000050CF7 /* ContactManagerViewController.m */; };
@@ -31,6 +35,14 @@
 
 /* Begin PBXFileReference section */
 		41B89400EF504FE62431A4F1 /* Pods-ClearAllContact.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearAllContact.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClearAllContact/Pods-ClearAllContact.release.xcconfig"; sourceTree = "<group>"; };
+		508A17691B85F4B500C0F9F6 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		508A176A1B85F4B500C0F9F6 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		508A176C1B85F61B00C0F9F6 /* FastAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastAddressBook.h; sourceTree = "<group>"; };
+		508A176D1B85F61B00C0F9F6 /* FastAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastAddressBook.m; sourceTree = "<group>"; };
+		508A176F1B85F8A200C0F9F6 /* ContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactModel.h; sourceTree = "<group>"; };
+		508A17701B85F8A200C0F9F6 /* ContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactModel.m; sourceTree = "<group>"; };
+		508A17721B85F95000C0F9F6 /* PhoneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneModel.h; sourceTree = "<group>"; };
+		508A17731B85F95000C0F9F6 /* PhoneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneModel.m; sourceTree = "<group>"; };
 		509372861B84517000050CF7 /* ClearAllContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearAllContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5093728A1B84517000050CF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5093728B1B84517000050CF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +93,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		508A17751B85F96E00C0F9F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				508A176C1B85F61B00C0F9F6 /* FastAddressBook.h */,
+				508A176D1B85F61B00C0F9F6 /* FastAddressBook.m */,
+				508A176F1B85F8A200C0F9F6 /* ContactModel.h */,
+				508A17701B85F8A200C0F9F6 /* ContactModel.m */,
+				508A17721B85F95000C0F9F6 /* PhoneModel.h */,
+				508A17731B85F95000C0F9F6 /* PhoneModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		508A17761B85F99A00C0F9F6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				509372901B84517000050CF7 /* ContactManagerViewController.h */,
+				509372911B84517000050CF7 /* ContactManagerViewController.m */,
+				508A17691B85F4B500C0F9F6 /* ContactViewController.h */,
+				508A176A1B85F4B500C0F9F6 /* ContactViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		5093727D1B84517000050CF7 = {
 			isa = PBXGroup;
 			children = (
@@ -104,8 +140,8 @@
 		509372881B84517000050CF7 /* ClearAllContact */ = {
 			isa = PBXGroup;
 			children = (
-				509372901B84517000050CF7 /* ContactManagerViewController.h */,
-				509372911B84517000050CF7 /* ContactManagerViewController.m */,
+				508A17761B85F99A00C0F9F6 /* Controllers */,
+				508A17751B85F96E00C0F9F6 /* Models */,
 				509372931B84517000050CF7 /* Main.storyboard */,
 				509372891B84517000050CF7 /* Supporting Files */,
 				509372B21B845A4C00050CF7 /* DefaultContact.plist */,
@@ -289,7 +325,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508A17711B85F8A200C0F9F6 /* ContactModel.m in Sources */,
+				508A17741B85F95000C0F9F6 /* PhoneModel.m in Sources */,
 				509372921B84517000050CF7 /* ContactManagerViewController.m in Sources */,
+				508A176B1B85F4B500C0F9F6 /* ContactViewController.m in Sources */,
+				508A176E1B85F61B00C0F9F6 /* FastAddressBook.m in Sources */,
 				5093728F1B84517000050CF7 /* AppDelegate.m in Sources */,
 				5093728C1B84517000050CF7 /* main.m in Sources */,
 			);

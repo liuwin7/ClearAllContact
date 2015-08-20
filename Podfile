@@ -3,6 +3,7 @@
 
 target 'ClearAllContact' do
 pod 'AFNetworking'
+pod 'JSONModel'
 end
 
 target 'ClearAllContactTests' do

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JSONModel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ClearAllContact.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>B18E8883473769ED184DCD28DCB5DC13</key>
+		<key>262621314C1AE159EF5A08FFDC6005E4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FB13AB898744012C293E52B77D22FF4D</key>
+		<key>5F4AB1F7C3A01DE2C418B652D8E1DC8A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BC87DB6DAA00D81CDF46B3B4C3B77D82</key>
 		<dict>
 			<key>primary</key>
 			<true/>

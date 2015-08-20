@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GP2-Hc-vmq">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -109,7 +110,7 @@
         <!--Contact-->
         <scene sceneID="JUs-go-d7W">
             <objects>
-                <viewController id="4MC-zB-gmE" sceneMemberID="viewController">
+                <viewController id="4MC-zB-gmE" customClass="ContactViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Shz-G3-yt9"/>
                         <viewControllerLayoutGuide type="bottom" id="wO9-zT-KQv"/>
@@ -130,6 +131,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4MC-zB-gmE" id="z7A-mW-7f2"/>
+                                    <outlet property="delegate" destination="4MC-zB-gmE" id="nyu-uW-qY8"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
