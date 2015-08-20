@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 topsci. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "ContactManagerViewController.h"
 #import <AddressBook/AddressBook.h>
 #import <AFNetworking/AFNetworking.h>
 
@@ -14,14 +14,13 @@ NSString *CONTACT_NAME = @"ContactName";
 NSString *CONTACT_PHONE = @"ContactPhone";
 NSString *CONTACT_PHONE_LABEL = @"ConctactPhoneLabel";
 
-@interface MainViewController ()<UIAlertViewDelegate>
+@interface ContactManagerViewController ()<UIAlertViewDelegate>
 
 @property(nonatomic, assign)ABAddressBookRef addressBook;
 
 @end
 
-@implementation MainViewController
-@synthesize addressBook;
+@implementation ContactManagerViewController
 
 #pragma mark - Life Cycle
 
@@ -34,24 +33,32 @@ NSString *CONTACT_PHONE_LABEL = @"ConctactPhoneLabel";
                                                                       NSForegroundColorAttributeName: [UIColor whiteColor],
                                                                       NSFontAttributeName: [UIFont systemFontOfSize:20.0f],
                                                                       }];
-    CFErrorRef error = nil;
-    addressBook = ABAddressBookCreateWithOptions(NULL, &error);
-    if (addressBook && !error) {
-        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
-            if (granted) {
-                NSLog(@"App has been granted");
-            } else {
-                NSLog(@"error %@", [(__bridge NSError *)error localizedDescription]);
-            }
-        });
-    } else {
-        NSLog(@"error %@", [(__bridge NSError *)error localizedDescription]);
-    }
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleDefault;
 }
+
+#pragma mark - getter and setter
+- (ABAddressBookRef)addressBook {
+    if (!_addressBook) {
+        CFErrorRef error = nil;
+        _addressBook = ABAddressBookCreateWithOptions(NULL, &error);
+        if (_addressBook && !error) {
+            ABAddressBookRequestAccessWithCompletion(_addressBook, ^(bool granted, CFErrorRef error) {
+                if (granted) {
+                    NSLog(@"App has been granted");
+                } else {
+                    NSLog(@"error %@", [(__bridge NSError *)error localizedDescription]);
+                }
+            });
+        } else {
+            NSLog(@"error %@", [(__bridge NSError *)error localizedDescription]);
+        }
+    }
+    return _addressBook;
+}
+
 
 #pragma mark - Target Action
 - (IBAction)clearAction:(UIButton *)sender {
@@ -86,12 +93,12 @@ NSString *CONTACT_PHONE_LABEL = @"ConctactPhoneLabel";
 #pragma mark - 
 
 - (void)clearAllContact {
-    CFArrayRef recordArray = ABAddressBookCopyArrayOfAllPeople(addressBook);
+    CFArrayRef recordArray = ABAddressBookCopyArrayOfAllPeople(self.addressBook);
     long recordCount = CFArrayGetCount(recordArray);
     CFErrorRef error = nil;
     for (long i = 0; i < recordCount; i++) {
         ABRecordRef record = CFArrayGetValueAtIndex(recordArray, i);
-        bool removeRecordSuccess = ABAddressBookRemoveRecord(addressBook, record, &error);
+        bool removeRecordSuccess = ABAddressBookRemoveRecord(self.addressBook, record, &error);
         if (!removeRecordSuccess && error) {
             break;
         }
@@ -99,8 +106,8 @@ NSString *CONTACT_PHONE_LABEL = @"ConctactPhoneLabel";
     if (error) {
         NSLog(@"error %@", [(__bridge NSError *)error localizedDescription]);
     } else {
-        if (ABAddressBookHasUnsavedChanges(addressBook)) {
-            bool saveSuccess = ABAddressBookSave(addressBook, &error);
+        if (ABAddressBookHasUnsavedChanges(self.addressBook)) {
+            bool saveSuccess = ABAddressBookSave(self.addressBook, &error);
             if (saveSuccess && !error) {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
                                                                     message:@"成功"
@@ -154,7 +161,7 @@ NSString *CONTACT_PHONE_LABEL = @"ConctactPhoneLabel";
                 if (error) {
                     *stop = YES;
                 } else {
-                    ABAddressBookAddRecord(addressBook, record, &error);
+                    ABAddressBookAddRecord(self.addressBook, record, &error);
                 }
                 // 释放Core Foundation 变量
                 if (phoneNumberRef) {
@@ -175,8 +182,8 @@ NSString *CONTACT_PHONE_LABEL = @"ConctactPhoneLabel";
         }
     }];
     
-    if (ABAddressBookHasUnsavedChanges(addressBook)) {
-        bool saveSuccess = ABAddressBookSave(addressBook, &error);
+    if (ABAddressBookHasUnsavedChanges(self.addressBook)) {
+        bool saveSuccess = ABAddressBookSave(self.addressBook, &error);
         if (saveSuccess && !error) {
             NSLog(@"synchronize database success");
         } else {
@@ -205,7 +212,7 @@ NSString *CONTACT_PHONE_LABEL = @"ConctactPhoneLabel";
  */
 
 - (void)backupContact {
-    CFArrayRef recordArray = ABAddressBookCopyArrayOfAllPeople(addressBook);
+    CFArrayRef recordArray = ABAddressBookCopyArrayOfAllPeople(self.addressBook);
     long recordCount = CFArrayGetCount(recordArray);
     NSMutableArray *contactArray = [NSMutableArray arrayWithCapacity:recordCount];
     for (long i = 0; i < recordCount; i++) {

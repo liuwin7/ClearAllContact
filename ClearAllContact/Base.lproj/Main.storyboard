@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GP2-Hc-vmq">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -10,7 +9,7 @@
         <!--Contact Steward-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ContactManagerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -41,7 +40,7 @@
                                 <color key="backgroundColor" red="0.95686280729999995" green="0.5647059083" blue="0.31372550129999999" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Import">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -107,7 +106,7 @@
             </objects>
             <point key="canvasLocation" x="2078" y="785"/>
         </scene>
-        <!--View Controller-->
+        <!--Contact-->
         <scene sceneID="JUs-go-d7W">
             <objects>
                 <viewController id="4MC-zB-gmE" sceneMemberID="viewController">
@@ -118,9 +117,30 @@
                     <view key="view" contentMode="scaleToFill" id="FS4-A1-Wfh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bo7-mq-85B">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactResuableID" id="Gx0-TH-vR5">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gx0-TH-vR5" id="S6B-FA-Ufm">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bo7-mq-85B" firstAttribute="leading" secondItem="FS4-A1-Wfh" secondAttribute="leading" id="lab-tA-HJ3"/>
+                            <constraint firstItem="bo7-mq-85B" firstAttribute="top" secondItem="FS4-A1-Wfh" secondAttribute="top" id="nbT-iq-ZtA"/>
+                            <constraint firstAttribute="bottom" secondItem="bo7-mq-85B" secondAttribute="bottom" id="uug-z0-3Z8"/>
+                            <constraint firstAttribute="trailing" secondItem="bo7-mq-85B" secondAttribute="trailing" id="zA6-lQ-QWU"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Rf3-oR-Ja5"/>
+                    <navigationItem key="navigationItem" title="Contact" id="Rf3-oR-Ja5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBN-wd-aDV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="1315" y="785"/>
         </scene>
-        <!--Main Tab Bar View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="aUi-9h-mkY">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="GP2-Hc-vmq" customClass="MainTabBarViewController" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="GP2-Hc-vmq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="rLR-Eu-J9T">

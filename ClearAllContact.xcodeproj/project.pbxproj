@@ -10,14 +10,13 @@
 		2156A763D7A7772684B552BC /* libPods-ClearAllContact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DD8368C473C685FF5215F3 /* libPods-ClearAllContact.a */; };
 		5093728C1B84517000050CF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093728B1B84517000050CF7 /* main.m */; };
 		5093728F1B84517000050CF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093728E1B84517000050CF7 /* AppDelegate.m */; };
-		509372921B84517000050CF7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509372911B84517000050CF7 /* MainViewController.m */; };
+		509372921B84517000050CF7 /* ContactManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509372911B84517000050CF7 /* ContactManagerViewController.m */; };
 		509372951B84517000050CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509372931B84517000050CF7 /* Main.storyboard */; };
 		509372971B84517000050CF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509372961B84517000050CF7 /* Images.xcassets */; };
 		5093729A1B84517000050CF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 509372981B84517000050CF7 /* LaunchScreen.xib */; };
 		509372A61B84517100050CF7 /* ClearAllContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 509372A51B84517100050CF7 /* ClearAllContactTests.m */; };
 		509372B11B8452EC00050CF7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509372B01B8452EC00050CF7 /* AddressBook.framework */; };
 		509372B31B845A4C00050CF7 /* DefaultContact.plist in Resources */ = {isa = PBXBuildFile; fileRef = 509372B21B845A4C00050CF7 /* DefaultContact.plist */; };
-		509B2A4F1B85C6C50092830B /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509B2A4E1B85C6C50092830B /* MainTabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +36,8 @@
 		5093728B1B84517000050CF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5093728D1B84517000050CF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5093728E1B84517000050CF7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		509372901B84517000050CF7 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		509372911B84517000050CF7 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		509372901B84517000050CF7 /* ContactManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactManagerViewController.h; sourceTree = "<group>"; };
+		509372911B84517000050CF7 /* ContactManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactManagerViewController.m; sourceTree = "<group>"; };
 		509372941B84517000050CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		509372961B84517000050CF7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		509372991B84517000050CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -49,8 +48,6 @@
 		509372B21B845A4C00050CF7 /* DefaultContact.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultContact.plist; sourceTree = "<group>"; };
 		509B2A481B857B080092830B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		509B2A4C1B8582190092830B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		509B2A4D1B85C6C50092830B /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
-		509B2A4E1B85C6C50092830B /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
 		85BD53AB6659F1F1C0ED61AC /* Pods-ClearAllContact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearAllContact.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClearAllContact/Pods-ClearAllContact.debug.xcconfig"; sourceTree = "<group>"; };
 		91DD8368C473C685FF5215F3 /* libPods-ClearAllContact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ClearAllContact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,10 +104,8 @@
 		509372881B84517000050CF7 /* ClearAllContact */ = {
 			isa = PBXGroup;
 			children = (
-				509372901B84517000050CF7 /* MainViewController.h */,
-				509372911B84517000050CF7 /* MainViewController.m */,
-				509B2A4D1B85C6C50092830B /* MainTabBarViewController.h */,
-				509B2A4E1B85C6C50092830B /* MainTabBarViewController.m */,
+				509372901B84517000050CF7 /* ContactManagerViewController.h */,
+				509372911B84517000050CF7 /* ContactManagerViewController.m */,
 				509372931B84517000050CF7 /* Main.storyboard */,
 				509372891B84517000050CF7 /* Supporting Files */,
 				509372B21B845A4C00050CF7 /* DefaultContact.plist */,
@@ -294,8 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				509372921B84517000050CF7 /* MainViewController.m in Sources */,
-				509B2A4F1B85C6C50092830B /* MainTabBarViewController.m in Sources */,
+				509372921B84517000050CF7 /* ContactManagerViewController.m in Sources */,
 				5093728F1B84517000050CF7 /* AppDelegate.m in Sources */,
 				5093728C1B84517000050CF7 /* main.m in Sources */,
 			);
