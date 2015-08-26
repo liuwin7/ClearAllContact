@@ -11,17 +11,19 @@
 #import "FastAddressBook.h"
 #import "ContactModel.h"
 #import "ContactDetailTableViewController.h"
+#import "NSString+TransformToChinesePhoneticize.h"
 
 @interface ContactViewController ()<UITableViewDataSource, UITableViewDelegate>
 
-@property(nonatomic, strong)NSArray *contactModelList;
+@property(nonatomic, strong)NSArray *contactTableViewTitles;
+@property(nonatomic, strong)NSDictionary *contactGroupDictionary;
 @property (weak, nonatomic) IBOutlet UITableView *contactTableView;
 
 @end
 
 @implementation ContactViewController
 
-@synthesize contactModelList;
+@synthesize contactTableViewTitles, contactGroupDictionary;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,6 +34,7 @@
                                                                       NSForegroundColorAttributeName: [UIColor whiteColor],
                                                                       NSFontAttributeName: [UIFont systemFontOfSize:20.0f],
                                                                       }];
+    
     [self loadContactData];
 }
 
@@ -47,21 +50,63 @@
 }
 
 - (void)loadContactData {
-    contactModelList = [[FastAddressBook sharedInstance] allContactFromSystem];
+    NSArray *systemContactModels = [[FastAddressBook sharedInstance] allContactFromSystem];
+    
+    // 分组的title
+    NSMutableSet *lastNames = [NSMutableSet set];
+    [systemContactModels enumerateObjectsUsingBlock:^(ContactModel *model, NSUInteger idx, BOOL *stop) {
+        [lastNames addObject:[[[model.contactName transformToChinesePhoneticize] substringToIndex:1] uppercaseString]];
+    }];
+    contactTableViewTitles = [[lastNames allObjects] sortedArrayUsingSelector:@selector(compare:)];
+    
+    // 每个分组的model
+    NSMutableDictionary *groupModelDic = [NSMutableDictionary dictionaryWithCapacity:contactTableViewTitles.count];
+    [systemContactModels enumerateObjectsUsingBlock:^(ContactModel *model, NSUInteger idx, BOOL *stop) {
+        NSString *firstCharInLastName = [[[model.contactName transformToChinesePhoneticize] substringToIndex:1] uppercaseString];
+        if (firstCharInLastName) {
+            NSMutableArray *groupArray = groupModelDic[firstCharInLastName];
+            if (!groupArray) {
+                groupArray = [NSMutableArray array];
+                [groupModelDic setObject:groupArray forKey:firstCharInLastName];
+            }
+            [groupArray addObject:model];
+        }
+    }];
+    contactGroupDictionary = [NSDictionary dictionaryWithDictionary:groupModelDic];
+    
     [self.contactTableView reloadData];
 }
 
 #pragma mark - UITableViewDatasource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return contactTableViewTitles.count;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return contactModelList.count;
+    NSString *sectionTitle = contactTableViewTitles[section];
+    NSArray *sectionContacts = contactGroupDictionary[sectionTitle];
+    return sectionContacts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *reusableID = @"contactResuableID";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reusableID];
-    ContactModel *model = contactModelList[indexPath.row];
+    
+    NSString *sectionTitle = contactTableViewTitles[indexPath.section];
+    NSArray *sectionContacts = contactGroupDictionary[sectionTitle];
+    ContactModel *model = sectionContacts[indexPath.row];
+    
     cell.textLabel.text = model.contactName;
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return contactTableViewTitles[section];
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return contactTableViewTitles;
 }
 
 #pragma mark - Navigation
@@ -71,7 +116,12 @@
     if ([segue.identifier isEqualToString:@"ContactDetailSegueID"]) {
         ContactDetailTableViewController *contactDetailVC = (ContactDetailTableViewController *)segue.destinationViewController;
         NSIndexPath *indexPath = [self.contactTableView indexPathForCell:(UITableViewCell *)sender];
-        contactDetailVC.contactModel = self.contactModelList[indexPath.row];
+        
+        NSString *sectionTitle = contactTableViewTitles[indexPath.section];
+        NSArray *sectionContacts = contactGroupDictionary[sectionTitle];
+        ContactModel *model = sectionContacts[indexPath.row];
+        
+        contactDetailVC.contactModel = model;
     }
 }
 

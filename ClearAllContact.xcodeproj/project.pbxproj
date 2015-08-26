@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2156A763D7A7772684B552BC /* libPods-ClearAllContact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DD8368C473C685FF5215F3 /* libPods-ClearAllContact.a */; };
 		50054A9C1B8DB703001A4438 /* ContactDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50054A9B1B8DB703001A4438 /* ContactDetailTableViewController.m */; };
+		50054AA21B8DD666001A4438 /* NSString+TransformToChinesePhoneticize.m in Sources */ = {isa = PBXBuildFile; fileRef = 50054AA11B8DD666001A4438 /* NSString+TransformToChinesePhoneticize.m */; };
 		508A176B1B85F4B500C0F9F6 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508A176A1B85F4B500C0F9F6 /* ContactViewController.m */; };
 		508A176E1B85F61B00C0F9F6 /* FastAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 508A176D1B85F61B00C0F9F6 /* FastAddressBook.m */; };
 		508A17711B85F8A200C0F9F6 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 508A17701B85F8A200C0F9F6 /* ContactModel.m */; };
@@ -38,6 +39,9 @@
 		41B89400EF504FE62431A4F1 /* Pods-ClearAllContact.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearAllContact.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClearAllContact/Pods-ClearAllContact.release.xcconfig"; sourceTree = "<group>"; };
 		50054A9A1B8DB703001A4438 /* ContactDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailTableViewController.h; sourceTree = "<group>"; };
 		50054A9B1B8DB703001A4438 /* ContactDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailTableViewController.m; sourceTree = "<group>"; };
+		50054AA01B8DD666001A4438 /* NSString+TransformToChinesePhoneticize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+TransformToChinesePhoneticize.h"; path = "ClearAllContact/Verdor/NSString+TransformToChinesePhoneticize.h"; sourceTree = SOURCE_ROOT; };
+		50054AA11B8DD666001A4438 /* NSString+TransformToChinesePhoneticize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+TransformToChinesePhoneticize.m"; path = "ClearAllContact/Verdor/NSString+TransformToChinesePhoneticize.m"; sourceTree = SOURCE_ROOT; };
+		50054AA41B8DE0EE001A4438 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		508A17691B85F4B500C0F9F6 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		508A176A1B85F4B500C0F9F6 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		508A176C1B85F61B00C0F9F6 /* FastAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastAddressBook.h; sourceTree = "<group>"; };
@@ -62,7 +66,6 @@
 		509372B01B8452EC00050CF7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		509372B21B845A4C00050CF7 /* DefaultContact.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultContact.plist; sourceTree = "<group>"; };
 		509B2A481B857B080092830B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		509B2A4C1B8582190092830B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		85BD53AB6659F1F1C0ED61AC /* Pods-ClearAllContact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearAllContact.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClearAllContact/Pods-ClearAllContact.debug.xcconfig"; sourceTree = "<group>"; };
 		91DD8368C473C685FF5215F3 /* libPods-ClearAllContact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ClearAllContact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,6 +97,16 @@
 				41B89400EF504FE62431A4F1 /* Pods-ClearAllContact.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		50054A9F1B8DD5E6001A4438 /* Verdor */ = {
+			isa = PBXGroup;
+			children = (
+				50054AA01B8DD666001A4438 /* NSString+TransformToChinesePhoneticize.h */,
+				50054AA11B8DD666001A4438 /* NSString+TransformToChinesePhoneticize.m */,
+			);
+			name = Verdor;
+			path = verdor;
 			sourceTree = "<group>";
 		};
 		508A17751B85F96E00C0F9F6 /* Models */ = {
@@ -146,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				508A17761B85F99A00C0F9F6 /* Controllers */,
+				50054A9F1B8DD5E6001A4438 /* Verdor */,
 				508A17751B85F96E00C0F9F6 /* Models */,
 				509372931B84517000050CF7 /* Main.storyboard */,
 				509372891B84517000050CF7 /* Supporting Files */,
@@ -331,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				508A17711B85F8A200C0F9F6 /* ContactModel.m in Sources */,
+				50054AA21B8DD666001A4438 /* NSString+TransformToChinesePhoneticize.m in Sources */,
 				508A17741B85F95000C0F9F6 /* PhoneModel.m in Sources */,
 				509372921B84517000050CF7 /* ContactManagerViewController.m in Sources */,
 				508A176B1B85F4B500C0F9F6 /* ContactViewController.m in Sources */,
@@ -364,7 +379,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				509372941B84517000050CF7 /* Base */,
-				509B2A4C1B8582190092830B /* zh-Hans */,
+				50054AA41B8DE0EE001A4438 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

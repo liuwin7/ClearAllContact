@@ -1,4 +1,3 @@
-
 /* Class = "UIButton"; normalTitle = "Recover"; ObjectID = "AXM-aM-Zyc"; */
 "AXM-aM-Zyc.normalTitle" = "恢复";
 
@@ -7,6 +6,9 @@
 
 /* Class = "UIBarButtonItem"; title = "Login"; ObjectID = "PTC-Xa-6fN"; */
 "PTC-Xa-6fN.title" = "登录";
+
+/* Class = "UINavigationItem"; title = "Contact"; ObjectID = "Rf3-oR-Ja5"; */
+"Rf3-oR-Ja5.title" = "联系人";
 
 /* Class = "UIButton"; normalTitle = "Backup"; ObjectID = "aKk-bg-uEy"; */
 "aKk-bg-uEy.normalTitle" = "备份";
