@@ -12,9 +12,6 @@
 #import "FastAddressBook.h"
 #import "ContactModel.h"
 
-NSString *CONTACT_NAME = @"ContactName";
-NSString *CONTACT_PHONE = @"ContactPhone";
-NSString *CONTACT_PHONE_LABEL = @"ConctactPhoneLabel";
 
 @interface ContactManagerViewController ()<UIAlertViewDelegate>
 
@@ -69,7 +66,12 @@ NSString *CONTACT_PHONE_LABEL = @"ConctactPhoneLabel";
 }
 
 - (IBAction)importAction:(UIButton *)sender {
-    [self importDefaultContact];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                        message:@"导入默认联系人"
+                                                       delegate:self
+                                              cancelButtonTitle:@"取消"
+                                              otherButtonTitles:@"确定", nil];
+    [alertView show];
 }
 
 - (IBAction)backupAction:(UIButton *)sender {
@@ -83,8 +85,14 @@ NSString *CONTACT_PHONE_LABEL = @"ConctactPhoneLabel";
 
 #pragma mark - UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-        [self clearAllContact];
+    if ([alertView.message isEqualToString:@"删除所有联系人"]) {
+        if (buttonIndex == 1) {
+            [self clearAllContact];
+        }
+    } else if ([alertView.message isEqualToString:@"导入默认联系人"]) {
+        if (buttonIndex == 1) {
+            [self importDefaultContact];
+        }
     }
 }
 
@@ -152,7 +160,8 @@ NSString *CONTACT_PHONE_LABEL = @"ConctactPhoneLabel";
                 *stop = YES;
             } else {
                 // 电话号码
-                NSString *phoneNumber = personDic[CONTACT_PHONE];
+                NSArray *phoneDics = personDic[CONTACT_PHONES];
+                NSString *phoneNumber = [phoneDics firstObject][CONTACT_PHONE_NUMBER];
                 ABMultiValueRef phoneNumberRef = ABMultiValueCreateMutable(kABPersonPhoneProperty);
                 ABMultiValueAddValueAndLabel(phoneNumberRef, (__bridge CFStringRef)phoneNumber, kABPersonPhoneMobileLabel, NULL);
                 ABRecordSetValue(record, kABPersonPhoneProperty, phoneNumberRef, &error);

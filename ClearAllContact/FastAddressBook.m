@@ -13,6 +13,8 @@ NSString *CONTACT_NAME = @"contactName";
 NSString *CONTACT_PHONES = @"contactTelephones";
 NSString *CONTACT_PHONE_NUMBER = @"phoneNumber";
 NSString *CONTACT_PHONE_TYPE = @"phoneType";
+NSString *CONTACT_CHANGED = @"contactChanged";
+NSString *ADDRESSBOOK_CHANGED_KEY = @"AddressBookChangedKey";
 
 
 @implementation FastAddressBook
@@ -30,21 +32,33 @@ NSString *CONTACT_PHONE_TYPE = @"phoneType";
 - (instancetype)init {
     self = [super init];
     if (self) {
-        CFErrorRef error = nil;
-        addressBook = ABAddressBookCreateWithOptions(NULL, &error);
-        if (addressBook && !error) {
-            ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
-                if (granted) {
-                    NSLog(@"App has been granted");
-                } else {
-                    NSLog(@"error %@", [(__bridge NSError *)error localizedDescription]);
-                }
-            });
-        } else {
-            NSLog(@"error %@", [(__bridge NSError *)error localizedDescription]);
-        }
+        [self reloadAddressBook];
     }
     return self;
+}
+
+- (void)reloadAddressBook {
+    if (addressBook) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            ABAddressBookUnregisterExternalChangeCallback(addressBook, ContactExternalChangeCallback, nil);
+        });
+    }
+    CFErrorRef error = nil;
+    addressBook = ABAddressBookCreateWithOptions(NULL, &error);
+    if (addressBook && !error) {
+        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+            if (granted) {
+                NSLog(@"App has been granted");
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    ABAddressBookRegisterExternalChangeCallback(addressBook, ContactExternalChangeCallback, (__bridge void *)(self));
+                });
+            } else {
+                NSLog(@"error %@", [(__bridge NSError *)error localizedDescription]);
+            }
+        });
+    } else {
+        NSLog(@"error %@", [(__bridge NSError *)error localizedDescription]);
+    }
 }
 
 
@@ -52,6 +66,7 @@ NSString *CONTACT_PHONE_TYPE = @"phoneType";
     CFArrayRef recordArray = ABAddressBookCopyArrayOfAllPeople(self.addressBook);
     long recordCount = CFArrayGetCount(recordArray);
     NSMutableArray *contactArray = [NSMutableArray arrayWithCapacity:recordCount];
+    NSError *error = nil; // JSONModel 使用
     for (long i = 0; i < recordCount; i++) {
         ABRecordRef record = CFArrayGetValueAtIndex(recordArray, i);
         // 电话号码
@@ -92,25 +107,27 @@ NSString *CONTACT_PHONE_TYPE = @"phoneType";
         NSString *lastName = lastNameRef != NULL ? (__bridge NSString *)lastNameRef : @"";
         NSString *contactName = [NSString stringWithFormat:@"%@%@", lastName, firstName]; // 姓名
         
-        NSDictionary *dic = @{
+        NSDictionary *contactDic = @{
                               CONTACT_NAME: contactName,
                               CONTACT_PHONES: allPhone,
                               };
-        
-        [contactArray addObject:dic];
-    }
-    // 转换成JSONModel
-    NSMutableArray *contacts = [NSMutableArray array];
-    __block NSError *error = nil;
-    [contactArray enumerateObjectsUsingBlock:^(NSDictionary *contactDic, NSUInteger idx, BOOL *stop) {
+        // 转换成JSONModel
         ContactModel *model = [[ContactModel alloc] initWithDictionary:contactDic error:&error];
         if (!model && error) {
-            *stop = YES;
+            NSLog(@"JSONModel Error %@", error);
+            break;
+        } else {
+            [contactArray addObject:model];
         }
-    }];
-    
-    return [contacts copy];
+    }
+    return [contactArray copy];
 }
 
+#pragma mark - 
+void ContactExternalChangeCallback(ABAddressBookRef addressBook, CFDictionaryRef info, void *context) {
+    FastAddressBook *fastAddressBook = (__bridge FastAddressBook *)context;
+    [fastAddressBook reloadAddressBook];
+    [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:ADDRESSBOOK_CHANGED_KEY];
+}
 
 @end

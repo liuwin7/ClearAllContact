@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2156A763D7A7772684B552BC /* libPods-ClearAllContact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DD8368C473C685FF5215F3 /* libPods-ClearAllContact.a */; };
+		50054A9C1B8DB703001A4438 /* ContactDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50054A9B1B8DB703001A4438 /* ContactDetailTableViewController.m */; };
 		508A176B1B85F4B500C0F9F6 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508A176A1B85F4B500C0F9F6 /* ContactViewController.m */; };
 		508A176E1B85F61B00C0F9F6 /* FastAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 508A176D1B85F61B00C0F9F6 /* FastAddressBook.m */; };
 		508A17711B85F8A200C0F9F6 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 508A17701B85F8A200C0F9F6 /* ContactModel.m */; };
@@ -35,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		41B89400EF504FE62431A4F1 /* Pods-ClearAllContact.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearAllContact.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClearAllContact/Pods-ClearAllContact.release.xcconfig"; sourceTree = "<group>"; };
+		50054A9A1B8DB703001A4438 /* ContactDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailTableViewController.h; sourceTree = "<group>"; };
+		50054A9B1B8DB703001A4438 /* ContactDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailTableViewController.m; sourceTree = "<group>"; };
 		508A17691B85F4B500C0F9F6 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		508A176A1B85F4B500C0F9F6 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		508A176C1B85F61B00C0F9F6 /* FastAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastAddressBook.h; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 				509372911B84517000050CF7 /* ContactManagerViewController.m */,
 				508A17691B85F4B500C0F9F6 /* ContactViewController.h */,
 				508A176A1B85F4B500C0F9F6 /* ContactViewController.m */,
+				50054A9A1B8DB703001A4438 /* ContactDetailTableViewController.h */,
+				50054A9B1B8DB703001A4438 /* ContactDetailTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				508A176E1B85F61B00C0F9F6 /* FastAddressBook.m in Sources */,
 				5093728F1B84517000050CF7 /* AppDelegate.m in Sources */,
 				5093728C1B84517000050CF7 /* main.m in Sources */,
+				50054A9C1B8DB703001A4438 /* ContactDetailTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

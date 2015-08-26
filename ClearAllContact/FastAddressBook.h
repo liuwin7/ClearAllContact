@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <AddressBook/AddressBook.h>
 
+extern NSString *CONTACT_NAME;
+extern NSString *CONTACT_PHONES;
+extern NSString *CONTACT_PHONE_NUMBER;
+extern NSString *CONTACT_PHONE_TYPE;
+extern NSString *CONTACT_CHANGED;
+extern NSString *ADDRESSBOOK_CHANGED_KEY;
+
 @interface FastAddressBook : NSObject
 
 @property(nonatomic, assign)ABAddressBookRef addressBook;

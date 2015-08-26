@@ -119,9 +119,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bo7-mq-85B">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="bo7-mq-85B">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactResuableID" id="Gx0-TH-vR5">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -129,6 +129,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gx0-TH-vR5" id="S6B-FA-Ufm">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="hwS-G1-3qD" kind="show" identifier="ContactDetailSegueID" trigger="accessoryAction" id="FKQ-a7-EDR"/>
+                                            <segue destination="hwS-G1-3qD" kind="show" identifier="ContactDetailSegueID" id="EpY-Pk-UMH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -146,10 +150,39 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contact" id="Rf3-oR-Ja5"/>
+                    <connections>
+                        <outlet property="contactTableView" destination="bo7-mq-85B" id="qXQ-eO-Mq7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBN-wd-aDV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2078" y="1509"/>
+        </scene>
+        <!--Contact Detail Table View Controller-->
+        <scene sceneID="Ags-5S-9cS">
+            <objects>
+                <tableViewController id="hwS-G1-3qD" customClass="ContactDetailTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="h7l-eF-xce">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactDetailTableViewReusableID" id="TFl-PW-aQy">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TFl-PW-aQy" id="gPH-l6-Wdw">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hwS-G1-3qD" id="R5s-9v-SzQ"/>
+                            <outlet property="delegate" destination="hwS-G1-3qD" id="8xX-e0-6Xk"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cxg-0c-BqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2826" y="1509"/>
         </scene>
         <!--Steward-->
         <scene sceneID="nnH-pg-7hW">
@@ -213,4 +246,7 @@
         <image name="contact" width="30" height="30"/>
         <image name="manager" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="FKQ-a7-EDR"/>
+    </inferredMetricsTieBreakers>
 </document>

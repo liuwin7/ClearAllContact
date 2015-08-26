@@ -3,64 +3,134 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>ContactName</key>
+		<key>contactTelephones</key>
+		<array>
+			<dict>
+				<key>phoneNumber</key>
+				<string>17721327212</string>
+				<key>phoneType</key>
+				<string>工作</string>
+			</dict>
+		</array>
+		<key>contactName</key>
 		<string>马钶嘉</string>
-		<key>ContactPhone</key>
-		<string>13521322121</string>
 	</dict>
 	<dict>
-		<key>ContactName</key>
+		<key>contactTelephones</key>
+		<array>
+			<dict>
+				<key>phoneNumber</key>
+				<string>18510511964</string>
+				<key>phoneType</key>
+				<string>工作</string>
+			</dict>
+		</array>
+		<key>contactName</key>
 		<string>郝文威</string>
-		<key>ContactPhone</key>
-		<string>18510511964</string>
 	</dict>
 	<dict>
-		<key>ContactName</key>
+		<key>contactTelephones</key>
+		<array>
+			<dict>
+				<key>phoneNumber</key>
+				<string>13051133557</string>
+				<key>phoneType</key>
+				<string>工作</string>
+			</dict>
+		</array>
+		<key>contactName</key>
 		<string>李泽伦</string>
-		<key>ContactPhone</key>
-		<string>13051133557</string>
 	</dict>
 	<dict>
-		<key>ContactName</key>
+		<key>contactTelephones</key>
+		<array>
+			<dict>
+				<key>phoneNumber</key>
+				<string>13529311921</string>
+				<key>phoneType</key>
+				<string>工作</string>
+			</dict>
+		</array>
+		<key>contactName</key>
+		<string>陶姐</string>
+	</dict>
+	<dict>
+		<key>contactTelephones</key>
+		<array>
+			<dict>
+				<key>phoneNumber</key>
+				<string>18393839211</string>
+				<key>phoneType</key>
+				<string>工作</string>
+			</dict>
+		</array>
+		<key>contactName</key>
 		<string>张璇</string>
-		<key>ContactPhone</key>
-		<string>18393839211</string>
 	</dict>
 	<dict>
-		<key>ContactName</key>
-		<string>桃姐</string>
-		<key>ContactPhone</key>
-		<string>13529311921</string>
-	</dict>
-	<dict>
-		<key>ContactName</key>
+		<key>contactTelephones</key>
+		<array>
+			<dict>
+				<key>phoneNumber</key>
+				<string>15839328283</string>
+				<key>phoneType</key>
+				<string>工作</string>
+			</dict>
+		</array>
+		<key>contactName</key>
 		<string>杨明轩</string>
-		<key>ContactPhone</key>
-		<string>15839328283</string>
 	</dict>
 	<dict>
-		<key>ContactName</key>
+		<key>contactTelephones</key>
+		<array>
+			<dict>
+				<key>phoneNumber</key>
+				<string>13321123987</string>
+				<key>phoneType</key>
+				<string>工作</string>
+			</dict>
+		</array>
+		<key>contactName</key>
 		<string>丽姐</string>
-		<key>ContactPhone</key>
-		<string>13321123987</string>
 	</dict>
 	<dict>
-		<key>ContactName</key>
+		<key>contactTelephones</key>
+		<array>
+			<dict>
+				<key>phoneNumber</key>
+				<string>13590912212</string>
+				<key>phoneType</key>
+				<string>工作</string>
+			</dict>
+		</array>
+		<key>contactName</key>
 		<string>刘大树</string>
-		<key>ContactPhone</key>
-		<string>13590912212</string>
 	</dict>
 	<dict>
-		<key>ContactName</key>
+		<key>contactTelephones</key>
+		<array>
+			<dict>
+				<key>phoneNumber</key>
+				<string>18743322213</string>
+				<key>phoneType</key>
+				<string>工作</string>
+			</dict>
+		</array>
+		<key>contactName</key>
 		<string>成龙</string>
-		<key>ContactPhone</key>
-		<string>18743322213</string>
 	</dict>
 	<dict>
-		<key>ContactName</key>
+		<key>contactTelephones</key>
+		<array>
+			<dict>
+				<key>phoneNumber</key>
+				<string>13898743212</string>
+				<key>phoneType</key>
+				<string>工作</string>
+			</dict>
+		</array>
+		<key>contactName</key>
 		<string>李连杰</string>
-		<key>ContactPhone</key>
-		<string>13898743212</string>
 	</dict>
 </array>
 </plist>
