@@ -217,7 +217,7 @@
                              @"userName": username,
                              @"contacts": contacts,
                              };
-    [manager POST:@"http://168.192.2.5/post_file.php" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:@"http://168.192.2.5/ContactManager/backupContact.php" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"response object %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"error %@", error);
@@ -232,7 +232,7 @@
     NSDictionary *paramDic = @{
                                @"userName": @"topsci",
                                };
-    [manager POST:@"http://168.192.2.5/recover_file.php" parameters:paramDic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:@"http://168.192.2.5/ContactManager/recoveryContact.php" parameters:paramDic success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"response object %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"error %@", error);

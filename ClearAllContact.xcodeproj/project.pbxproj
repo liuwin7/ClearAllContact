@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2156A763D7A7772684B552BC /* libPods-ClearAllContact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DD8368C473C685FF5215F3 /* libPods-ClearAllContact.a */; };
 		50054A9C1B8DB703001A4438 /* ContactDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50054A9B1B8DB703001A4438 /* ContactDetailTableViewController.m */; };
 		50054AA21B8DD666001A4438 /* NSString+TransformToChinesePhoneticize.m in Sources */ = {isa = PBXBuildFile; fileRef = 50054AA11B8DD666001A4438 /* NSString+TransformToChinesePhoneticize.m */; };
 		508A176B1B85F4B500C0F9F6 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508A176A1B85F4B500C0F9F6 /* ContactViewController.m */; };
@@ -23,6 +22,7 @@
 		509372A61B84517100050CF7 /* ClearAllContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 509372A51B84517100050CF7 /* ClearAllContactTests.m */; };
 		509372B11B8452EC00050CF7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509372B01B8452EC00050CF7 /* AddressBook.framework */; };
 		509372B31B845A4C00050CF7 /* DefaultContact.plist in Resources */ = {isa = PBXBuildFile; fileRef = 509372B21B845A4C00050CF7 /* DefaultContact.plist */; };
+		78196128EA322B87D5946251 /* Pods_ClearAllContact.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A17CB8C8FF75BF7878993C73 /* Pods_ClearAllContact.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,7 @@
 		509372B21B845A4C00050CF7 /* DefaultContact.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultContact.plist; sourceTree = "<group>"; };
 		509B2A481B857B080092830B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		85BD53AB6659F1F1C0ED61AC /* Pods-ClearAllContact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearAllContact.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClearAllContact/Pods-ClearAllContact.debug.xcconfig"; sourceTree = "<group>"; };
-		91DD8368C473C685FF5215F3 /* libPods-ClearAllContact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ClearAllContact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A17CB8C8FF75BF7878993C73 /* Pods_ClearAllContact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClearAllContact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				509372B11B8452EC00050CF7 /* AddressBook.framework in Frameworks */,
-				2156A763D7A7772684B552BC /* libPods-ClearAllContact.a in Frameworks */,
+				78196128EA322B87D5946251 /* Pods_ClearAllContact.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				509372B01B8452EC00050CF7 /* AddressBook.framework */,
-				91DD8368C473C685FF5215F3 /* libPods-ClearAllContact.a */,
+				A17CB8C8FF75BF7878993C73 /* Pods_ClearAllContact.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -219,6 +219,7 @@
 				509372831B84517000050CF7 /* Frameworks */,
 				509372841B84517000050CF7 /* Resources */,
 				A7150E04E9FE7B746445CDFF /* Copy Pods Resources */,
+				46F692FAC26727265AF7F091 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,6 +308,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		46F692FAC26727265AF7F091 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClearAllContact/Pods-ClearAllContact-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A7150E04E9FE7B746445CDFF /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,7 +448,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -469,7 +485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
