@@ -21,16 +21,16 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - JSONModel (1.1.0)
-  - Spring (1.0.3)
+  - pop (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking
   - JSONModel
-  - Spring (~> 1.0.3)
+  - pop (~> 1.0.7)
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
-  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
 
 COCOAPODS: 0.38.2

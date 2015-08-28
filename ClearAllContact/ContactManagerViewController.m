@@ -12,14 +12,19 @@
 #import "FastAddressBook.h"
 #import "ContactModel.h"
 
-
 @interface ContactManagerViewController ()<UIAlertViewDelegate>
 
 @property(nonatomic, assign)ABAddressBookRef addressBook;
 
+@property (weak, nonatomic) IBOutlet UIButton *clearButton;
+@property (weak, nonatomic) IBOutlet UIButton *importButton;
+@property (weak, nonatomic) IBOutlet UIButton *backupButton;
+@property (weak, nonatomic) IBOutlet UIButton *recoverButton;
+
 @end
 
 @implementation ContactManagerViewController
+@synthesize clearButton, importButton, backupButton, recoverButton;
 
 #pragma mark - Life Cycle
 
@@ -32,6 +37,11 @@
                                                                       NSForegroundColorAttributeName: [UIColor whiteColor],
                                                                       NSFontAttributeName: [UIFont systemFontOfSize:20.0f],
                                                                       }];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
 }
 
 #pragma mark - getter and setter

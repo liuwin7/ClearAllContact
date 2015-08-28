@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9AE4C89E1309B2B76024D66F"
-               BuildableName = "Pods_ClearAllContact.framework"
+               BlueprintIdentifier = "03677D7C21F8A0FE95A97B69"
+               BuildableName = "libPods-ClearAllContact.a"
                BlueprintName = "Pods-ClearAllContact"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

@@ -22,7 +22,7 @@
 		509372A61B84517100050CF7 /* ClearAllContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 509372A51B84517100050CF7 /* ClearAllContactTests.m */; };
 		509372B11B8452EC00050CF7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509372B01B8452EC00050CF7 /* AddressBook.framework */; };
 		509372B31B845A4C00050CF7 /* DefaultContact.plist in Resources */ = {isa = PBXBuildFile; fileRef = 509372B21B845A4C00050CF7 /* DefaultContact.plist */; };
-		78196128EA322B87D5946251 /* Pods_ClearAllContact.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A17CB8C8FF75BF7878993C73 /* Pods_ClearAllContact.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B35F2C4D3B3A457CEC946BB9 /* libPods-ClearAllContact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E432625B9E47397C8ADF3C6C /* libPods-ClearAllContact.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,7 @@
 		509372B21B845A4C00050CF7 /* DefaultContact.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultContact.plist; sourceTree = "<group>"; };
 		509B2A481B857B080092830B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		85BD53AB6659F1F1C0ED61AC /* Pods-ClearAllContact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearAllContact.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClearAllContact/Pods-ClearAllContact.debug.xcconfig"; sourceTree = "<group>"; };
-		A17CB8C8FF75BF7878993C73 /* Pods_ClearAllContact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClearAllContact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E432625B9E47397C8ADF3C6C /* libPods-ClearAllContact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ClearAllContact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				509372B11B8452EC00050CF7 /* AddressBook.framework in Frameworks */,
-				78196128EA322B87D5946251 /* Pods_ClearAllContact.framework in Frameworks */,
+				B35F2C4D3B3A457CEC946BB9 /* libPods-ClearAllContact.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				509372B01B8452EC00050CF7 /* AddressBook.framework */,
-				A17CB8C8FF75BF7878993C73 /* Pods_ClearAllContact.framework */,
+				E432625B9E47397C8ADF3C6C /* libPods-ClearAllContact.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -219,7 +219,6 @@
 				509372831B84517000050CF7 /* Frameworks */,
 				509372841B84517000050CF7 /* Resources */,
 				A7150E04E9FE7B746445CDFF /* Copy Pods Resources */,
-				46F692FAC26727265AF7F091 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -308,21 +307,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		46F692FAC26727265AF7F091 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClearAllContact/Pods-ClearAllContact-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A7150E04E9FE7B746445CDFF /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
