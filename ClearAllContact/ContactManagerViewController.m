@@ -11,6 +11,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "FastAddressBook.h"
 #import "ContactModel.h"
+#import <pop/POP.h>
 
 @interface ContactManagerViewController ()<UIAlertViewDelegate>
 
@@ -42,6 +43,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    [self configureAnimation];
 }
 
 #pragma mark - getter and setter
@@ -247,6 +249,26 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"error %@", error);
     }];
+}
+
+#pragma mark - POP Animation
+
+- (void)configureAnimation {
+    [self addSpringAnimationTo:clearButton left:YES];
+    [self addSpringAnimationTo:importButton left:NO];
+    [self addSpringAnimationTo:backupButton left:YES];
+    [self addSpringAnimationTo:recoverButton left:NO];
+}
+
+- (void)addSpringAnimationTo:(UIView *)view left:(BOOL)isLeft {
+    POPSpringAnimation *leftViewSpringAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
+    leftViewSpringAnimation.springBounciness = 4;
+    leftViewSpringAnimation.springSpeed = 10;
+    CGFloat space = isLeft ? -100 : 100;
+    leftViewSpringAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(CGRectGetMidX(view.frame) + space, CGRectGetMidY(view.frame))];
+    CGPoint leftViewTargetCenter = CGPointMake(CGRectGetMidX(view.frame), CGRectGetMidY(view.frame));
+    leftViewSpringAnimation.toValue = [NSValue valueWithCGPoint:leftViewTargetCenter];
+    [view pop_addAnimation:leftViewSpringAnimation forKey:[view description]];
 }
 
 @end
